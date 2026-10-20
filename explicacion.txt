@@ -1,0 +1,6 @@
+explicacion para subir todo correctamente:
+
+1º abrir visual y hacer pull
+2º hacer cambios
+3º commit comentario
+4º push
