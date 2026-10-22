@@ -73,7 +73,7 @@
         <article class="bits">
             <h2>pixelDepth</h2>
             <p>Devuelve la prifundidad de bits de la pantalla</p>
-            <button>ver</button>
+            <button onclick="bits()">ver</button>
             <div id="insert_bits"></div>
         </article>
     </section>
@@ -111,6 +111,11 @@
             + 
             "Ángulo: " + screen.orientation.angle + " grados. <br> " +
             "Tipo: " + screen.orientation.type  + ".";
+        }
+
+        function bits(){
+            document.getElementById("insert_bits").innerHTML = "La profundidad del bits de tu pantalla es: <i style = 'color: red;'>screen.pixelDepth</i>. <br><br>" + 
+            "Salida: <i>La profundidad del bits de tu pantalla es: " + screen.pixelDepth + ". </i>";
         }
         // console.log("Ancho total: ", screen.width);
         // console.log("Alto total: ", screen.height); 
