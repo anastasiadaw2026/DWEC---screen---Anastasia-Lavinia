@@ -38,13 +38,13 @@
         </article>
         <article class="ancho_px">
             <h2>availWidht</h2>
-            <p>Especifica la anchura en píxeles</p>
+            <p>Especifica la anchura disponible en píxeles</p>
             <button type="submit" onclick="devolverAnchoPX()">ver</button>
             <div id="insert_ancho_px"></div>
         </article>
         <article class="alto_px">
             <h2>availHeight</h2>
-            <p>Especifica la altura en píxeles</p>
+            <p>Especifica la altura disponible en píxeles</p>
             <button type="submit" onclick="devolverAltoPX()">ver</button>
             <div id="insert_alto_px"></div>
         </article>
@@ -85,7 +85,7 @@
 
         function devolverAlto(){
             document.getElementById("insert_alto").innerHTML = "Tu pantalla tiene de alto: <i style = 'color: red;'>screen.height</i>. <br><br>" + 
-            "Salida: <i>Tu pantalla tiene: " + screen.height + ". </i>";
+            "Salida: <i>Tu pantalla tiene: " + screen.height + "px. </i>";
         }
 
         function devolverAnchoPX(){
