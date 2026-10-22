@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <section>
+    <section class="inicio">
         <article>
             <h1>Objeto Screen</h1>
             <p>El objeto screen
@@ -26,32 +27,32 @@
         <article class="ancho">
             <h2>width</h2>
             <p>Anchura completa de la pantalla del usuario</p>
-            <button type="submit" onclick="devolverAncho()">Ver</button>
-            <p id="insertar"></p>
+            <button type="submit" onclick="devolverAncho()">ver</button>
+            <div id="insertar"></div>
         </article>
         <article class="alto">
             <h2>height</h2>
             <p>Altura completa de la pantalla del usuario</p>
-            <button type="submit" onclick="devolverAlto()">Ver</button>
-            <p id="insert_alto"></p>
+            <button type="submit" onclick="devolverAlto()">ver</button>
+            <div id="insert_alto"></div>
         </article>
         <article class="ancho_px">
             <h2>availWidht</h2>
             <p>Especifica la anchura en píxeles</p>
-            <button type="submit" onclick="devolverAnchoPX()">Ver</button>
-            <p id="insert_ancho_px"></p>
+            <button type="submit" onclick="devolverAnchoPX()">ver</button>
+            <div id="insert_ancho_px"></div>
         </article>
         <article class="alto_px">
             <h2>availHeight</h2>
             <p>Especifica la altura en píxeles</p>
-            <button>ver</button>
-            <p id="insert_alto_px"></p>
+            <button type="submit" onclick="devolverAltoPX()">ver</button>
+            <div id="insert_alto_px"></div>
         </article>
         <article class="color">
             <h2>colorDepth</h2>
             <p>Devuelve la profundidad de color de la pnatalla</p>
-            <button type="submit" onclick="devolverColor()"></button>
-            <p id="insert_color"></p>
+            <button type="submit" onclick="devolverColor()">ver</button>
+            <div id="insert_color"></div>
         </article>
         <article class="orientacion">
             <h2>orientation</h2>
@@ -59,27 +60,65 @@
                 Es una propiedad experimental que continuará, pero puede 
                 modificar su funcionamiento en un futuro próximo.
             </p>
-            <button type="submit" onclick="devolverOrientacion()"></button>
-            <p id="insert_orientacion"></p>
+            <h3>Atributos principales: </h3>
+            <p style="text-align: left;"><i style="color: aqua;">type:</i> Indica el tipo de orientación actual de la pantalla. Devuelve una cadena de texto con uno de estos valores: <br />
+                • "portrait-primary" (vertical normal) <br />
+                • "portrait-secondary" (vertical invertida, de cabeza) <br />
+                • "landscape-primary" (horizontal normal) <br />
+                • "landscape-secondary" (horizontal invertida) <br /><br />
+            <i style="color: aqua;">angle:</i> Devuelve el ángulo de rotación actual en grados (0, 90, 180 o 270) respecto a la posición natural del dispositivo.</p>
+            <button type="submit" onclick="devolverOrientacion()">ver</button>
+            <div id="insert_orientacion"></div>
         </article>
         <article class="bits">
             <h2>pixelDepth</h2>
             <p>Devuelve la prifundidad de bits de la pantalla</p>
-            <button></button>
-            <p id="insert_bits"></p>
+            <button>ver</button>
+            <div id="insert_bits"></div>
         </article>
     </section>
     <script>
         function devolverAncho(){
-            document.getElementById("insertar").innerHTML = screen.width;
+            document.getElementById("insertar").innerHTML = "Tu pantalla tiene de ancho: <i style = 'color: red;'>screen.width</i>. <br><br>" + 
+            "Salida: <i>Tu pantalla tiene: " + screen.width + "px. </i>";
         }
-        console.log("Ancho total: ", screen.width);
-        console.log("Alto total: ", screen.height); 
-        console.log("Ancho en pixeles total: ", screen.availWidth);
-        console.log("Alto en pixeles total: ", screen.availHeight);
-        console.log("Profundidas de color: ", screen.colorDepth);
-        console.log("Orientacion: ", screen.orientation);
-        console.log("Profundidad de bits de la pantalla: ", screen.pixelDepth);
+
+        function devolverAlto(){
+            document.getElementById("insert_alto").innerHTML = "Tu pantalla tiene de alto: <i style = 'color: red;'>screen.height</i>. <br><br>" + 
+            "Salida: <i>Tu pantalla tiene: " + screen.height + ". </i>";
+        }
+
+        function devolverAnchoPX(){
+            document.getElementById("insert_ancho_px").innerHTML = "Tu pantalla tiene de ancho: <i style = 'color: red;'>screen.avaiWidth px.</i> <br><br>" + 
+            "Salida: <i>Tu pantalla tiene: " + screen.availWidth + "px. </i>";
+        }
+
+        function devolverAltoPX(){
+            document.getElementById("insert_alto_px").innerHTML = "Tu pantalla tiene de alto: <i style = 'color: red;'>screen.avaiHeightt px.</i> <br><br>" + 
+            "Salida: <i>Tu pantalla tiene: " + screen.availHeight + "px. </i>";
+        }
+
+        function devolverColor(){
+            document.getElementById("insert_color").innerHTML = "La profundidad del color de tu pantalla es: <i style = 'color: red;'>screen.colorDepth</i>. <br><br>" + 
+            "Salida: <i>La profundidad del color de tu pantalla es: " + screen.colorDepth + ". </i>";
+        }
+
+        function devolverOrientacion(){
+            document.getElementById("insert_orientacion").innerHTML = "Objeto con informacion sobre tu pantalla: <i style = 'color: red;'>screen.orientation</i>. <br>" + 
+            "Ángulo: screen.orientation.angle grados. <br> " +
+            "Tipo: screen.orientation.type. <br><br>" + 
+            "Salida: <i>Objeto con informacion sobre tu pantalla: " + screen.orientation + ". </i><br>"
+            + 
+            "Ángulo: " + screen.orientation.angle + " grados. <br> " +
+            "Tipo: " + screen.orientation.type  + ".";
+        }
+        // console.log("Ancho total: ", screen.width);
+        // console.log("Alto total: ", screen.height); 
+        // console.log("Ancho en pixeles total: ", screen.availWidth);
+        // console.log("Alto en pixeles total: ", screen.availHeight);
+        // console.log("Profundidas de color: ", screen.colorDepth);
+        // console.log("Orientacion: ", screen.orientation);
+        // console.log("Profundidad de bits de la pantalla: ", screen.pixelDepth);
     </script>
 </body>
 </html>
