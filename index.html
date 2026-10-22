@@ -23,43 +23,56 @@
         </article>
     </section>
     <section class="propiedades">
-        <article class="propiedades ancho">
-            <h2></h2>
-            <p></p>
-            <button></button>
+        <article class="ancho">
+            <h2>width</h2>
+            <p>Anchura completa de la pantalla del usuario</p>
+            <button type="submit" onclick="devolverAncho()">Ver</button>
+            <p id="insertar"></p>
         </article>
-        <article class="propiedades alto">
-            <h2></h2>
-            <p></p>
-            <button></button>
+        <article class="alto">
+            <h2>height</h2>
+            <p>Altura completa de la pantalla del usuario</p>
+            <button type="submit" onclick="devolverAlto()">Ver</button>
+            <p id="insert_alto"></p>
         </article>
-        <article class="propiedades ancho_px">
-            <h2></h2>
-            <p></p>
-            <button></button>
+        <article class="ancho_px">
+            <h2>availWidht</h2>
+            <p>Especifica la anchura en píxeles</p>
+            <button type="submit" onclick="devolverAnchoPX()">Ver</button>
+            <p id="insert_ancho_px"></p>
         </article>
-        <article class="propiedades alto_px">
-            <h2></h2>
-            <p></p>
-            <button></button>
+        <article class="alto_px">
+            <h2>availHeight</h2>
+            <p>Especifica la altura en píxeles</p>
+            <button>ver</button>
+            <p id="insert_alto_px"></p>
         </article>
-        <article class="propiedades color">
-            <h2></h2>
-            <p></p>
-            <button></button>
+        <article class="color">
+            <h2>colorDepth</h2>
+            <p>Devuelve la profundidad de color de la pnatalla</p>
+            <button type="submit" onclick="devolverColor()"></button>
+            <p id="insert_color"></p>
         </article>
-        <article class="propiedades orientacion">
-            <h2></h2>
-            <p></p>
-            <button></button>
+        <article class="orientacion">
+            <h2>orientation</h2>
+            <p>Devuelve un objeto con información sobre la pantalla.
+                Es una propiedad experimental que continuará, pero puede 
+                modificar su funcionamiento en un futuro próximo.
+            </p>
+            <button type="submit" onclick="devolverOrientacion()"></button>
+            <p id="insert_orientacion"></p>
         </article>
-        <article class="propiedades bits">
-            <h2></h2>
-            <p></p>
+        <article class="bits">
+            <h2>pixelDepth</h2>
+            <p>Devuelve la prifundidad de bits de la pantalla</p>
             <button></button>
+            <p id="insert_bits"></p>
         </article>
     </section>
     <script>
+        function devolverAncho(){
+            document.getElementById("insertar").innerHTML = screen.width;
+        }
         console.log("Ancho total: ", screen.width);
         console.log("Alto total: ", screen.height); 
         console.log("Ancho en pixeles total: ", screen.availWidth);
@@ -67,5 +80,6 @@
         console.log("Profundidas de color: ", screen.colorDepth);
         console.log("Orientacion: ", screen.orientation);
         console.log("Profundidad de bits de la pantalla: ", screen.pixelDepth);
+    </script>
 </body>
 </html>
